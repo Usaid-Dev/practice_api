@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_api/Post_Api/SignIn.dart';
+import 'package:practice_api/Post_Api/upload_image.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SignInScreen(),
+      home: const UploadImage(),
     );
   }
 }
