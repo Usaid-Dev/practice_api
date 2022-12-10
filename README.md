@@ -2,14 +2,14 @@
 
 In this project I learned about implementing Apis
 
-1st api :- https://jsonplaceholder.typicode.com/posts
-2nd api :- https://jsonplaceholder.typicode.com/photos
-3rd api :- https://jsonplaceholder.typicode.com/users
-4th api :- https://jsonplaceholder.typicode.com/users
-5th api :- https://webhook.site/29626c4b-a489-42d3-8c49-1ac36d2c9029
-SignUpApi :- https://reqres.in/api/register
-SignInApi :- https://reqres.in/api/login
-UploadImage Api :- https://fakestoreapi.com/products
+- 1st api :- https://jsonplaceholder.typicode.com/posts
+- 2nd api :- https://jsonplaceholder.typicode.com/photos
+- 3rd api :- https://jsonplaceholder.typicode.com/users
+- 4th api :- https://jsonplaceholder.typicode.com/users
+- 5th api :- https://webhook.site/29626c4b-a489-42d3-8c49-1ac36d2c9029
+- SignUpApi :- https://reqres.in/api/register
+- SignInApi :- https://reqres.in/api/login
+- UploadImage Api :- https://fakestoreapi.com/products
 
 ### Images of App
 
