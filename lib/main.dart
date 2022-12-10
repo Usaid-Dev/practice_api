@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_api/Post_Api/upload_image.dart';
+import 'package:practice_api/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: const UploadImage(),
+      home: const HomeScreen(),
     );
   }
 }

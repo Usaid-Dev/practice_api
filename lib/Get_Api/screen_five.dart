@@ -28,7 +28,7 @@ class _ScreenFiveState extends State<ScreenFive> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('PRACTICE-API'),
+        title: const Text('Complex-Api | Model with plugin'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

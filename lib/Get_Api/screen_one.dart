@@ -33,7 +33,8 @@ class _ScreenOneState extends State<ScreenOne> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PRACTICE-API'),
+        centerTitle: true,
+        title: const Text('Fetched Api | Model with plugin'),
       ),
       body: Column(
         children: [

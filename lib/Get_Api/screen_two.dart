@@ -31,7 +31,8 @@ class _ScreenTwoState extends State<ScreenTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PRACTICE-API'),
+        centerTitle: true,
+        title: const Text('Fetched Api | Without Model'),
       ),
       body: Column(
         children: [

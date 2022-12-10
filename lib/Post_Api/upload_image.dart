@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -23,7 +24,7 @@ class _UploadImageState extends State<UploadImage> {
       image = File(pickedFile.path);
       setState(() {});
     } else {
-      print('No Image Selected');
+      toastMessage('No Image Selected');
     }
   }
 
@@ -52,12 +53,12 @@ class _UploadImageState extends State<UploadImage> {
       setState(() {
         showSpinner = false;
       });
-      print('Image Uploaded');
+      toastMessage('Image Uploaded');
     } else {
       setState(() {
         showSpinner = false;
       });
-      print('Failed');
+      toastMessage('Failed');
     }
   }
 
@@ -68,7 +69,7 @@ class _UploadImageState extends State<UploadImage> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('PRACTICE-UPLOAD-IMAGE-API'),
+          title: const Text('Learn Post-Api | Upload Images'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -120,4 +121,15 @@ class _UploadImageState extends State<UploadImage> {
       ),
     );
   }
+}
+
+void toastMessage(String message) {
+  Fluttertoast.showToast(
+      msg: message.toString(),
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.SNACKBAR,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.white,
+      textColor: Colors.black,
+      fontSize: 16.0);
 }

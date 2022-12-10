@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  fluttertoast: ^8.1.1
   http: ^0.13.5
   image_picker: ^0.8.6
   modal_progress_hud_nsn: ^0.3.0

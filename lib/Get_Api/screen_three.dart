@@ -33,7 +33,7 @@ class _ScreenThreeState extends State<ScreenThree> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('PRACTICE-API'),
+        title: const Text('Complex-Api | Model with plugin'),
       ),
       body: Column(
         children: [

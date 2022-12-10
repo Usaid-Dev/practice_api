@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -14,7 +15,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  void login(String email, password) async {
+  // Only get SignUp by this email:-eve.holt@reqres.in
+  // and password:-pistol
+
+  void SignUp(String email, password) async {
     try {
       Response response = await post(
           Uri.parse('https://reqres.in/api/register'),
@@ -23,12 +27,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
         print(data);
-        print('account created successfully');
+        toastMessage('Account Created Successfully');
       } else {
-        print('failed');
+        toastMessage('FAILED');
       }
     } catch (e) {
-      print(e.toString());
+      toastMessage(e.toString());
     }
   }
 
@@ -37,7 +41,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('PRACTICE-SIGNUP-API'),
+        title: const Text('Learn Post-Api | SignUp'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -61,7 +65,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             GestureDetector(
               onTap: () {
-                login(emailController.text.toString(),
+                SignUp(emailController.text.toString(),
                     passwordController.text.toString());
               },
               child: Container(
@@ -79,4 +83,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
+}
+
+void toastMessage(String message) {
+  Fluttertoast.showToast(
+      msg: message.toString(),
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.SNACKBAR,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.white,
+      textColor: Colors.black,
+      fontSize: 16.0);
 }

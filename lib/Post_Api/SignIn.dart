@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -14,6 +15,9 @@ class _SignInScreenState extends State<SignInScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  // Only get login by this email:-eve.holt@reqres.in
+  // and password:-pistol
+
   void login(String email, password) async {
     try {
       Response response = await post(Uri.parse('https://reqres.in/api/login'),
@@ -22,12 +26,12 @@ class _SignInScreenState extends State<SignInScreen> {
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
         print(data);
-        print('login successfully');
+        toastMessage('Log in successfully');
       } else {
-        print('failed');
+        toastMessage('Failed');
       }
     } catch (e) {
-      print(e.toString());
+      toastMessage(e.toString());
     }
   }
 
@@ -36,7 +40,7 @@ class _SignInScreenState extends State<SignInScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('PRACTICE-SIGNIN-API'),
+        title: const Text('Learn Post-Api | SignIn'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -78,4 +82,15 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
+}
+
+void toastMessage(String message) {
+  Fluttertoast.showToast(
+      msg: message.toString(),
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.SNACKBAR,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.white,
+      textColor: Colors.black,
+      fontSize: 16.0);
 }
